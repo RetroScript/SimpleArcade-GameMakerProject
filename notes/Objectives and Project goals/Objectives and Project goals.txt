@@ -1,0 +1,12 @@
+SIMPLES MECHANICS THAT I WANT TO IMPLEMENT
+
+-try to figure out a cool gameplay loop
+-make a simple point system
+-make a simple phase system
+-make at least 3 diferent enemies
+
+FIRST IDEAS
+
+-a classical "roguelike" game where you have to survive against enemies
+-made to be more an arcadic than loric game
+-SIMPLE enemies and SIMPLES gameplay
