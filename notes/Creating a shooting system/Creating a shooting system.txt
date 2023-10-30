@@ -1,0 +1,45 @@
+CREATING A SHOOTING SYSTEM
+
+[30/10/23]: today i'll try to implement a simple shooting system in which the player will
+be able to collect a gun and take shoots with it.
+
+the first ideia is to detect when the player collides with the dropped gun and then
+make it get out of the floor and follow him.
+
+so we have this simple algoritm:
+
+1 - player and gun colides >> 
+2 - gun is destroyed >> 
+3 - new gun with new states is created >>
+4 - the new gun follows the player 
+
+FIRST PROBLEM
+
+not knowing how to create a new instace above a previous one, even using the needed
+method with the desired properties:
+
+instance_create_layer(oPlayer.x, oPlayer.y, "Instances", oWeapon)
+
+I can't realize where I can set the new gun layer position in relation to the player
+
+SOLUTION FOUND 
+
+there are two possible solutions to this problem, the first is creating a new instance
+layer and putting the new guns in there, and the second is by using the depth property of 
+a single layer with the two objects, object and player, and putting the new gun instance
+at a more "close" position.
+
+So now we have these pieces of code:
+
+instance_create_layer(oPlayer.x, oPlayer.y, "Instances_1", oWeapon)
+instance_create_depth(oPlayer.x, oPlayer.y, 0, oWeapon)
+
+SOLUTION CHO SEN --> the second one --> instance_create_depth(oPlayer.x, oPlayer.y, 0, oWeapon)
+
+CONCLUSION - WHAT DID I LEARN TODAY?
+
+1 - how to destroy instances
+2 - how to create instances...
+	2.1 - in different layers
+	2.2 - in different depths
+3 - the layers types and it's properties
