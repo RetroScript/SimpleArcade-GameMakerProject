@@ -3,7 +3,7 @@
   "resourceVersion": "1.1",
   "name": "Creating a shooting system",
   "parent": {
-    "name": "Anotações",
-    "path": "folders/Anotações.yy",
+    "name": "Features Devlogs",
+    "path": "folders/Anotações/Features Devlogs.yy",
   },
 }

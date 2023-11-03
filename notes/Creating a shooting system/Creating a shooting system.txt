@@ -1,6 +1,8 @@
 CREATING A SHOOTING SYSTEM
 
-[30/10/23]: today i'll try to implement a simple shooting system in which the player will
+[30/10/23]: CREATING THE FIRST VERSION OF A SHOOTING SYSTEM
+
+today i'll try to implement a simple shooting system in which the player will
 be able to collect a gun and take shoots with it.
 
 the first ideia is to detect when the player collides with the dropped gun and then
@@ -13,7 +15,7 @@ so we have this simple algoritm:
 3 - new gun with new states is created >>
 4 - the new gun follows the player 
 
-FIRST PROBLEM
+FIRST PROBLEM \______ __ _
 
 not knowing how to create a new instace above a previous one, even using the needed
 method with the desired properties:
@@ -22,7 +24,7 @@ instance_create_layer(oPlayer.x, oPlayer.y, "Instances", oWeapon)
 
 I can't realize where I can set the new gun layer position in relation to the player
 
-SOLUTION FOUND 
+SOLUTION FOUND \______ __ _
 
 there are two possible solutions to this problem, the first is creating a new instance
 layer and putting the new guns in there, and the second is by using the depth property of 
@@ -34,12 +36,155 @@ So now we have these pieces of code:
 instance_create_layer(oPlayer.x, oPlayer.y, "Instances_1", oWeapon)
 instance_create_depth(oPlayer.x, oPlayer.y, 0, oWeapon)
 
-SOLUTION CHO SEN --> the second one --> instance_create_depth(oPlayer.x, oPlayer.y, 0, oWeapon)
+SOLUTION CHOSEN --> the second one --> instance_create_depth(oPlayer.x, oPlayer.y, 0, oWeapon)
 
-CONCLUSION - WHAT DID I LEARN TODAY?
+CONCLUSION - WHAT DID I LEARN TODAY? \______ __ _
 
 1 - how to destroy instances
 2 - how to create instances...
 	2.1 - in different layers
 	2.2 - in different depths
 3 - the layers types and it's properties
+
+[01/11/23]: ANALYSING BEHAVIORS
+
+After concluding the previous coding session I realized a strange behavior
+between the player and the gun objects. This entry were created with the purpose of
+analysing the code and the resultant behaviors as well possible changes and experiments
+
+The first unusual behavior that I saw, is that the gun isn't at the exact player 
+coordinates of the player when it's taken. After being taken the gun surely follows
+the player but with some delay on it's movement.
+
+By analysing the code it can be discovered some properties that I made and how these can be 
+causing that peculiarity.
+
+These are the variables that track the oWeapon object states:
+		
+	equiped = false;
+	dropped = true;
+	shooting = false;
+
+Each one of them will be used at a determinated situation:
+
+	The EQUIPED variable refers when the gun is, in fact, equiped by the player, 
+	something that only happen AFTER the player collides with the gun
+
+	The DROPPED variable will make track of when the gun is on the floor, so by default
+	it is the OPPOSITE of the EQUIPED state
+
+	The SHOOTING state will represents when the player is shooting, this happens after the 
+	user click the proposed button.
+
+Also by checking the code, some logical operation can be seen as well. These wil take control 
+over the states that we predeterminated earlier, and by some verifications it will be possible 
+to say when something is supposed to happen. 
+
+Here is the code to what will happen when the player collides with the dropped gun:
+
+	if(place_meeting(x, y, oWeapon) && oWeapon.dropped = true){
+	
+		instance_destroy(oWeapon)
+		weaponed = true;
+		instance_create_layer(oPlayer.x, oPlayer.y, "Instances_1", oWeapon)
+		oWeapon.dropped = false;
+		oWeapon.equiped = true;
+	
+	}
+	
+It's possible to understand that, when the oPlayer collides with the oWeapon some of 
+the gun properties will be changed at the process, consequently changing it's behaviors.
+
+After checking if the they both collided and the gun is dropped this will happen:
+
+	1 - first, the previous gun instance is destroyed
+		
+		instance_destroy(oWeapon)
+		
+	2 - second, now we update the player state, it has a gun now
+	
+		weaponed = true;
+	
+	3 - third, we create a new gun, but now it has different states
+	
+		instance_create_layer(oPlayer.x, oPlayer.y, "Instances_1", oWeapon)
+		oWeapon.dropped = false;
+		oWeapon.equiped = true;
+
+	4 - as the new gun it's created with brand new states, it will surely have new
+		behaviors, wich is defined into the oWeapon code:
+		
+		if(oPlayer.weaponed){
+
+		x = oPlayer.x;
+		y = oPlayer.y;
+
+		}
+		
+So, in abstract, when the player collides the old gun is removed and new one is made
+in order to make it follow the player.
+
+But, looking by looking closely it will be possible to see that, actually the gun states
+aren't used properly:
+
+	if(oPlayer.weaponed){
+
+		x = oPlayer.x;
+		y = oPlayer.y;
+
+	}
+
+Instead of using them here, the code only use a player state, wich is also updated 
+with the collision and make the purpose of saying to the gun to follow the player very 
+well, but it makes the actual gun properties unused. So to correct that the "weaponed"
+state will be discarded and the "equiped" will take the place.
+
+But it doesn't didn't resolve the delay "problem" yet.
+
+ANALYSING THE NATURE OF THE DELAY
+
+It's more convinient to think about the delay as a feature and not as a problem by itself
+since it can be a bit aesthetic by bringing some "game juice" to the game.
+Delay is pretty common at macine proccessing since some activities have necessairily 
+to happen after one another. In the case of this project, the code that makes the gun 
+follows the player happens into the gun object, and is probably executed after the code
+within the player data is read.
+
+If another situation was adopted like... Making the gun coordinates update inside the 
+player, the result would be completely different, without almost any delay.
+
+Another reason for the delay is that the gun completely depends on the player to set 
+it's new coordinates, what implies in taking some time to change it's positions once 
+everything have to happen at the player first and then the gun have to "adapt to it".
+
+In conclusion, the delay isn't causing problems enough to be considered a bug or a issue,
+therefore, for this project it will be adopted for aesthetic reasons.
+
+[01/11/23]: ADDING SOME NEW FEATURES TO THE GUN BEHAVIOR
+
+Today I'll try to add some new behaviors to the gun object and to the way of shooting
+by itself, some things like: gun rotation and projectile "rotation"
+
+I think since I will rotate something I will need some basic notions of angle and
+angle relationships at trigonometry, for now all I know is:
+
+	1-Basic trigonometry operations like: sin, cos, and tg
+	
+		I know that there's some operation that we can do when we need to find somethin at 
+		a triangle such as the lenghts of the side and so on.
+		
+		But i'm in doubt about discovering the value of an angle from these and that's what
+		I actually need.
+		
+	2-Basic trigonomtric circle
+	
+		To be honest I only did a basic review at subject, nothing so deep. so far I learned 
+		that the hypotenuse stills the same when the others varies (angle and the other lines),
+		so a angle represents a certain height and width for the triangle but honestly I 
+		don't know how to do it.
+
+So before putting it into code i'll search for some videoclasses and try to get into the subject.
+
+[]
+
+

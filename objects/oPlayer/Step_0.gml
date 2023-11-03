@@ -28,15 +28,18 @@ if(keyboard_check(ord("D"))){
 #endregion 
 
 
-if(place_meeting(x, y, oWeapon) && oWeapon.dropped = true){
+if(place_meeting(x, y, oWeapon) && oWeapon.equiped = false){
 	
 	instance_destroy(oWeapon)
-	weaponed = true;
 	instance_create_layer(oPlayer.x, oPlayer.y, "Instances_1", oWeapon)
+	weaponed = true;
 	oWeapon.dropped = false;
-	oWeapon.active = true;
+	oWeapon.equiped = true;
+	
+	show_debug_message("new object created")
 	
 }
+
 
 if(weaponed && keyboard_check(ord("H"))){
 
