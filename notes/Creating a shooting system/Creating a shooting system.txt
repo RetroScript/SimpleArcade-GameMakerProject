@@ -185,6 +185,22 @@ angle relationships at trigonometry, for now all I know is:
 
 So before putting it into code i'll search for some videoclasses and try to get into the subject.
 
-[]
+[3/11/23]: DISCOVERED THAT IT'S MORE EASIER THAN I THOUGHT
 
+Actually game maker has a proper way to do it without any complex calculation through
+code.
 
+For this I will use the image_angle default atribute with the point_direction() as a 
+paremeter, that will basicly set the image angle to the same angle the the cursor
+is in relation to the object. The point_direction() method will have the object and 
+cursor coordinates as parameters and the angle value will be returned.
+
+This shows me that in some languages there are resources to make advanced
+calculations and these are contained by the libraries whose are available online 
+or provided by the programming language by default.
+
+So while it is interesting to think about an logical, and sometimes mathematical,
+solution there are moments that a "shortcut path" resource can be ideal to a certain
+project.
+
+[14/11/23]: 

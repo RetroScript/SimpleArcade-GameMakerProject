@@ -1,0 +1,18 @@
+CREATING A RANDOM ENEMY GENERATOR
+
+[04/11/23]: PLANNING A RANDOM ENEMY SPAWN SYSTEM
+
+Hello again, now I want the enemies to randomly generate within the map in a way that it
+spawns around and far from the player in a way to have enough time to kill them making
+the gameplay more fair.
+
+To this I'm going to use the random() and the random_range() functions.
+
+And I also have to implement a cooldown variable such as a spawn_limit variable.
+
+RANDOMLY SPAWNING THE ENEMIES ON THE ROOM
+
+1-take random positions>>
+2-check if the position are into the desired coordinates>>
+3-if so, spawn the enemies, spawning cooldown counts>>
+4-count each spawn, if it hits the limit wait to the player kill all of them

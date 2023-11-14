@@ -1,4 +1,4 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-//x = x+spd
-//y = y+spd
+spd = 5;
+speed = 2.5;

@@ -6,5 +6,5 @@ equiped = false;
 dropped = true;
 shooting = false;
 
-angle = 0;
-mouse_angle = 0;
+
+

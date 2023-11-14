@@ -31,7 +31,7 @@ if(keyboard_check(ord("D"))){
 if(place_meeting(x, y, oWeapon) && oWeapon.equiped = false){
 	
 	instance_destroy(oWeapon)
-	instance_create_layer(oPlayer.x, oPlayer.y, "Instances_1", oWeapon)
+	instance_create_layer(oPlayer.x, oPlayer.y, "Weapon_and_projectiles", oWeapon)
 	weaponed = true;
 	oWeapon.dropped = false;
 	oWeapon.equiped = true;
@@ -41,9 +41,9 @@ if(place_meeting(x, y, oWeapon) && oWeapon.equiped = false){
 }
 
 
-if(weaponed && keyboard_check(ord("H"))){
+if(weaponed && mouse_check_button(mb_left)){
 
 	oWeapon.shooting = true;
-	instance_create_depth(oWeapon.x, oWeapon.y, 0, oBullet)
+	instance_create_layer(oWeapon.x , oWeapon.y, "Weapon_and_projectiles", oBullet)
 }
 

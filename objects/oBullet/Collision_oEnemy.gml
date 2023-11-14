@@ -1,4 +1,5 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-//x = x+spd
-//y = y+spd
+
+instance_destroy(oEnemy)
+oGame.points += 1
