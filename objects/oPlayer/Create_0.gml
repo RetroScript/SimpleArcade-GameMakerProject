@@ -4,4 +4,4 @@ life = 100
 weaponed = false
 spd = 10
 
-player_range = [x-64, y-64, x+32,y+32]
+player_range = [x-128, y-128, x+128, y+128]

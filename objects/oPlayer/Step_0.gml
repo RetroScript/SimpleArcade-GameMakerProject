@@ -1,6 +1,8 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+player_range = [x-256, y-256, x+256, y+256]
+
 #region movements
 if(keyboard_check(ord("A"))){
 
