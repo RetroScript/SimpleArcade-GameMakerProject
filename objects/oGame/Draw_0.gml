@@ -8,4 +8,6 @@ draw_text_color(10, 25, $"gun coords: {oWeapon.x} {oWeapon.y}", c_aqua,c_blue,c_
 draw_text(10, 40, $"gun angle: {oWeapon.image_angle}")
 
 draw_text(10, 55, $"random_x {r_value_x}, random_y {r_value_y}")
-draw_text(10, 70, $"amount of enemies {instance_number(oEnemy)}")
+draw_text(10, 70, $"amount of enemies {instance_number(oEnemy)}, spawn limit: {spawn_limit}")
+draw_text(10, 85, $"spawn cooldown {spawn_cd}, spawnable {spawnable}")
+

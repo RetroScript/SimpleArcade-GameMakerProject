@@ -1,5 +1,5 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-instance_destroy(oEnemy)
+instance_destroy(other)
 oGame.points += 1

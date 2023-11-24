@@ -1,7 +1,8 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-player_range = [x-256, y-256, x+256, y+256]
+player_range = [x-(sprite_width*range_scale), y-(sprite_height*range_scale), 
+x+(sprite_width*range_scale) , y+(sprite_height*range_scale)]
 
 #region movements
 if(keyboard_check(ord("A"))){

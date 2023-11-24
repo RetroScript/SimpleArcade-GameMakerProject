@@ -4,4 +4,7 @@ life = 100
 weaponed = false
 spd = 10
 
-player_range = [x-128, y-128, x+128, y+128]
+range_scale = 3
+
+player_range = [x-(sprite_width*range_scale), y-(sprite_height*range_scale), 
+x+(sprite_width*range_scale) , y+(sprite_height*range_scale)]
