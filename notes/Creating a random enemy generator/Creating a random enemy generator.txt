@@ -108,3 +108,13 @@ close from the player, making it really hard to keep on. And also, the enemies a
 too fast not allowing the player to react properly. So, in conclusion, the cooldown variable 
 need to be used to limit the spawn, and the spawning area need to be changed in a way to 
 allow the player to move and react "correctly".
+
+[29/11/23]: Everything done here!
+
+I experimented with some conditionals here and then, and it finally worked as is wanted.
+The cooldown is now in use, and the area of spawn was updated. with that we got some 
+advantages like:
+
+1-a fair gameplay
+2-a more client response time
+3-more balance at the combat

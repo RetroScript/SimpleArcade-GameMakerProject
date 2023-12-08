@@ -33,6 +33,7 @@
     {"id":{"name":"oWeapon","path":"objects/oWeapon/oWeapon.yy",},},
     {"id":{"name":"Objectives and Project goals","path":"notes/Objectives and Project goals/Objectives and Project goals.yy",},},
     {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},},
+    {"id":{"name":"end_game","path":"scripts/end_game/end_game.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},},
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},},

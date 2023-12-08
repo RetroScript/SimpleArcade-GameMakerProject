@@ -9,7 +9,8 @@ spawn_limit = 5;
 
 r_value_x = random_range(0, room_width)
 r_value_y = random_range(0, room_height)
-	
+
+game_state = ["running","victory", "defeat"]
 
 function random_enemy_spawn ()
 {

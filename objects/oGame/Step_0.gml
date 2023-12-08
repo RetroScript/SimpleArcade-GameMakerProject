@@ -16,3 +16,5 @@ show_debug_message("YOU WON")
 room_next(1)
 
 }
+
+end_game();
