@@ -26,7 +26,6 @@ function coliding_enemy ()
 		
 		is_alive = false;
 		instance_destroy(oPlayer)
-		oGame.game_state = [2]
 	
 	}
 

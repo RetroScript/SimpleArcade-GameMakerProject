@@ -40,8 +40,8 @@
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},},
     {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},},
     {"id":{"name":"sBGtile","path":"sprites/sBGtile/sBGtile.yy",},},
+    {"id":{"name":"Counting point and finishing the game","path":"notes/Counting point and finishing the game/Counting point and finishing the game.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
-    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"Creating a random enemy generator","path":"notes/Creating a random enemy generator/Creating a random enemy generator.yy",},},
     {"id":{"name":"sWeapon","path":"sprites/sWeapon/sWeapon.yy",},},
     {"id":{"name":"Creating a shooting system","path":"notes/Creating a shooting system/Creating a shooting system.yy",},},
@@ -49,7 +49,6 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

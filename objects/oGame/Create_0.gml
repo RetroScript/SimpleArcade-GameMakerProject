@@ -10,12 +10,11 @@ spawn_limit = 5;
 r_value_x = random_range(0, room_width)
 r_value_y = random_range(0, room_height)
 
-game_state = ["running","victory", "defeat"]
 
 function random_enemy_spawn ()
 {
 	
-	show_debug_message("running random spawn script")
+	//show_debug_message("running random spawn script")
 	
 	r_value_x = random_range(0, room_width)
 	r_value_y = random_range(0, room_height)
@@ -47,7 +46,7 @@ function random_enemy_spawn ()
 		{
 		
 		instance_create_layer(r_value_x,r_value_y, "Enemies", oEnemy);
-		show_debug_message("another enemy spawned")
+		//show_debug_message("another enemy spawned")
 		spawn_cd = 50;
 		}	
 	}
